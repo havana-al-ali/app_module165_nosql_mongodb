@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 165 – Application MongoDB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Module 165 – Application MongoDB</h1>
+    <h2>Exploration des données (Students Performance)</h2>
+
+    <p>Choisissez une opération à effectuer sur la base MongoDB :</p>
+
+    <button onclick="filter('female')">Filtrer : Étudiantes (female)</button>
+    <button onclick="filter('bachelor')">Filtrer : Niveau Bachelor</button>
+
+    <button onclick="sortData('math')">Trier : Score de math</button>
+    <button onclick="sortData('writing')">Trier : Score d’écriture</button>
+
+    <button onclick="aggregate('avgByGender')">Agrégation : Moyenne par genre</button>
+    <button onclick="aggregate('topStudent')">Agrégation : Meilleur élève</button>
+
+    <h3>Résultat :</h3>
+    <div id="result"></div>
+
+    <script src="filter.js"></script>
+    <script src="sort.js"></script>
+    <script src="aggregate.js"></script>
+
+    <footer>
+        <p>© 2026 – Application MongoDB | Auteurs : <strong>Havana Al Ali</strong> & <strong>Maryam Aman</strong></p>
+    </footer>
+
+</body>
+</html>
