@@ -19,7 +19,11 @@ Elle permet d’exploiter une base de données NoSQL (MongoDB) à travers trois 
   - Driver MongoDB PHP (`mongodb/mongodb` via Composer)
 
 - **Base de données :**
-  - MongoDB Standalone (sans authentification)
+  - MongoDB Standalone (avec authentification)
+  - Utilisateur administrateur : myUserAdmin (authSource=admin)
+  - Port utilisé : 27020
+  - Base de données : my_data_Havana_Maryam
+  - Collections : open_data, my_team, test
 
 ### Structure du projet
 
@@ -47,7 +51,7 @@ app_module165_Havana_Maryam/
 
 ---
 
-## 2. Fonctionnalités en bref
+## 2. Fonctionnalités
 
 L’application propose **3 affichages différents**, chacun correspondant à une commande MongoDB différente.
 
