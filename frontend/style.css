@@ -108,6 +108,9 @@ h2 {
     border-left: 4px solid #2d4a7c;
 }
 
+#result-sort {
+    display: none;
+}
 
 footer {
     text-align: center;

@@ -1,9 +1,16 @@
 function sortData(field) {
- localStorage.clear();
+    localStorage.clear();
+
+    const resultSort = document.getElementById("result-sort");
+
+    // Cacher avant d'afficher un nouveau résultat
+    resultSort.style.display = "none";
+
     fetch("../backend/sort.php?field=" + field)
         .then(r => r.json())
         .then(s => {
-            document.getElementById("result-sort").innerHTML = `
+
+            resultSort.innerHTML = `
                 <strong>Meilleur élève :</strong><br><br>
                 Genre : ${s.gender}<br>
                 Race : ${s["race/ethnicity"]}<br>
@@ -15,16 +22,22 @@ function sortData(field) {
                 Écriture : ${s["writing score"]}<br><br>
                 <strong>Moyenne : ${s.average}</strong>
             `;
+
+            // Montrer la carte
+            resultSort.style.display = "block";
         });
 }
 
 function resetSortUI() {
-    // vider le localStorage
     localStorage.clear();
 
-    // vider les résultats
-    document.getElementById("result-sort").innerHTML = "";
+    const resultSort = document.getElementById("result-sort");
 
-    // message optionnel
+    // Cacher la carte
+    resultSort.style.display = "none";
+
+    // Vider le contenu
+    resultSort.innerHTML = "";
+
     console.log("Tri réinitialisé.");
 }
