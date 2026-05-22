@@ -162,6 +162,11 @@ Docker démarre automatiquement :
 
 - http://localhost:8000/frontend/index.html
 
+## Dépôt GitHub
+
+- Le code complet est également disponible sur GitHub :
+  https://github.com/havana-al-ali/app_module165_Havana_Maryam
+
 ## Auteur
 
 Havana Al Ali | Maryam Aman
