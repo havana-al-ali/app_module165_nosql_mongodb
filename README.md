@@ -50,7 +50,9 @@ app_module165_Havana_Maryam/
 │   └── 1_open_data_Havana_Maryam.json
 │
 ├── vendor/
-├── docker-compose.yml
+|__ docker
+|  |__ docker-compose.yml
+|  |__ Dockerfile
 └── README.md
 
 ```
