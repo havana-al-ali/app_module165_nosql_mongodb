@@ -2,11 +2,12 @@ version: "3.9"
 
 services:
 
+ # Service PHP (frontend + backend)
   php:
     build: .
     container_name: php_app165
     ports:
-      - "8000:8000"
+      - "8000:8000"   # Accès à l'app
     volumes:
       - "C:\\xampp\\htdocs\\app_module165_Havana_Maryam\\frontend:/var/www/html/frontend"
       - "C:\\xampp\\htdocs\\app_module165_Havana_Maryam\\backend:/var/www/html/backend"
@@ -15,12 +16,13 @@ services:
     working_dir: /var/www/html
     command: php -S 0.0.0.0:8000 -t /var/www/html
 
+# Service MongoDB
   mongo:
     image: mongo:6
     container_name: mongo_app165
     restart: always
     ports:
-      - "27020:27017"
+      - "27020:27017"  # Accès MongoDB
     environment:
       MONGO_INITDB_ROOT_USERNAME: myUserAdmin
       MONGO_INITDB_ROOT_PASSWORD: myPassword123
