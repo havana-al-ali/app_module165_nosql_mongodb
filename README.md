@@ -25,6 +25,9 @@ Elle permet d’exploiter une base de données NoSQL (MongoDB) à travers trois 
   - Base de données : my_data_Havana_Maryam
   - Collections : open_data, my_team, test
 
+- **Conteneurisation :**
+- Docker & Docker Compose
+
 ### Structure du projet
 
 ```
@@ -43,10 +46,13 @@ app_module165_Havana_Maryam/
 │   ├── sort.js
 │   └── aggregate.js
 │
-├── vendor/        (généré par Composer)
-├── composer.json
-├── composer.lock
+├── data/
+│   └── 1_open_data_Havana_Maryam.json
+│
+├── vendor/
+├── docker-compose.yml
 └── README.md
+
 ```
 
 ---
@@ -64,22 +70,6 @@ Affiche **uniquement les étudiantes female** dont le niveau d’éducation pare
   find({ gender: "female", "parental level of education": "high school" });
   ```
 
-```
-Affichage sous forme de tableau contenant les colonnes suivantes :
-
-- Genre
-- Race / Ethnicité
-- Niveau d’éducation parental
-- Lunch
-- Test preparation course
-- Math score
-- Reading score
-- Writing score
-
-```
-
----
-
 ### 2. Tri (sort + limit)
 
 Affiche le meilleur élève selon un critère choisi :
@@ -88,27 +78,16 @@ Top score Math
 
 Top score Écriture
 
-Commandes MongoDB :
+Commandes :
 
 ```js
 find().sort({ "math score": -1 }).limit(1);
 find().sort({ "writing score": -1 }).limit(1);
 ```
 
-Affichage sous forme de carte contenant les informations suivantes :
-
-- Genre
-- Race / Ethnicité
-- Niveau d’éducation parental
-- Lunch
-- Test preparation course
-- Scores détaillés (Math, Lecture, Écriture)
-- Moyenne calculée (math + reading + writing)
-
 ### 3. Agrégation (aggregate)
 
 a) Moyenne par genre
-Pipeline :
 
 ```js
 [
@@ -138,7 +117,7 @@ Pipeline :
 
 ## 3. Instructions d’installation & exécution
 
-### Exécution via Docker
+### Lancer l’application via Docker
 
 Cette application fonctionne entièrement via Docker.
 
@@ -152,13 +131,35 @@ Cette application fonctionne entièrement via Docker.
 
 Docker démarre automatiquement :
 
-- un conteneur PHP 8.2
+- PHP sur http://localhost:8000
 
-- un conteneur MongoDB 6
+- MongoDB sur localhost:27020
 
-- l’application accessible sur le port 8000
+3. Import des données MongoDB
 
-3. Accéder à l’application :
+- Les données sont fournies dans :
+  data/1_open_data_Havana_Maryam.json
+
+Si nécessaire, importer manuellement :
+docker exec -it mongo_app165 bash
+mongoimport --username myUserAdmin --password myPassword123 --authenticationDatabase admin \
+ --db my_data_Havana_Maryam \
+ --collection open_data \
+ --file /data/1_open_data_Havana_Maryam.json \
+ --jsonArray 4. URLs de test du backend
+
+Filtrage :
+http://localhost:8000/backend/filter.php?type=female_highschool
+
+Tri :
+http://localhost:8000/backend/sort.php?type=top_math
+http://localhost:8000/backend/sort.php?type=top_writing
+
+Agrégation :
+http://localhost:8000/backend/aggregate.php?type=avg_by_gender
+http://localhost:8000/backend/aggregate.php?type=top_student
+
+5. Accéder à l’application :
 
 - http://localhost:8000/frontend/index.html
 
