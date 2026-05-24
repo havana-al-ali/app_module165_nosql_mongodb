@@ -142,6 +142,7 @@ Docker démarre automatiquement :
 
 Si nécessaire, importer manuellement :
 
+```js
 docker exec -it mongo_app165 bash
 mongoimport --username myUserAdmin --password myPassword123 --authenticationDatabase admin \
  --db my_data_Havana_Maryam \
@@ -149,14 +150,19 @@ mongoimport --username myUserAdmin --password myPassword123 --authenticationData
  --file /data/1_open_data_Havana_Maryam.json \
  --jsonArray 4. URLs de test du backend
 
+```
+
 Filtrage :
+
 http://localhost:8000/backend/filter.php?type=female_highschool
 
 Tri :
+
 http://localhost:8000/backend/sort.php?type=top_math
 http://localhost:8000/backend/sort.php?type=top_writing
 
 Agrégation :
+
 http://localhost:8000/backend/aggregate.php?type=avg_by_gender
 http://localhost:8000/backend/aggregate.php?type=top_student
 
