@@ -141,6 +141,7 @@ Docker démarre automatiquement :
   data/1_open_data_Havana_Maryam.json
 
 Si nécessaire, importer manuellement :
+
 docker exec -it mongo_app165 bash
 mongoimport --username myUserAdmin --password myPassword123 --authenticationDatabase admin \
  --db my_data_Havana_Maryam \
