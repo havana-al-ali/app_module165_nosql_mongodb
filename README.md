@@ -129,7 +129,11 @@ Cette application fonctionne entièrement via Docker.
 
 2. Lancer l’application :
 
-- docker compose up --build
+```js
+
+docker compose up --build
+
+```
 
 Docker démarre automatiquement :
 
@@ -154,7 +158,11 @@ mongoimport --username myUserAdmin --password myPassword123 --authenticationData
 
 ```
 
-5. URLs de test du backend
+5. Accéder à l’application :
+
+- http://localhost:8000/frontend/index.html
+
+6. URLs de test du backend
 
 Filtrage :
 
@@ -169,10 +177,6 @@ Agrégation :
 
 http://localhost:8000/backend/aggregate.php?type=avg_by_gender
 http://localhost:8000/backend/aggregate.php?type=top_student
-
-6. Accéder à l’application :
-
-- http://localhost:8000/frontend/index.html
 
 ## Dépôt GitHub
 
