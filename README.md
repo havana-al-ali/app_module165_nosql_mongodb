@@ -1,4 +1,4 @@
-# Module 165 – Application MongoDB
+# Module 165 – Application MongoDB (NoSQL)
 
 Application développée dans le cadre de l’évaluation finale du module 165.  
 Elle permet d’exploiter une base de données NoSQL (MongoDB) à travers trois affichages différents : filtrage, tri et agrégation.
@@ -186,6 +186,6 @@ http://localhost:8000/backend/aggregate.php?type=top_student
 
 ## Auteur
 
-Havana Al Ali | Maryam Aman
+Havana Al Ali
 Module 165 – Évaluation finale
 Date : Mai 2026
