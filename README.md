@@ -182,7 +182,7 @@ http://localhost:8000/backend/aggregate.php?type=top_student
 
 - Le code complet est également disponible sur GitHub :
 
-  https://github.com/havana-al-ali/app_module165_Havana_Maryam
+  https://github.com/havana-al-ali/app_module165_nosql_mongodb
 
 ## Auteur
 
